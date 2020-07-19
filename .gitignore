@@ -2,4 +2,6 @@
 /Lib/
 /Scripts/
 /pyvenv.cfg
+/venv/
 /.idea/
+.idea/

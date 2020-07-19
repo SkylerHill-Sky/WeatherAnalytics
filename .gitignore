@@ -6,3 +6,5 @@
 /.idea/
 django_weather/data_manager/__pycache__/
 django_weather/data_manager/migrations/
+django_weather/djangoweather/__pycache__/
+

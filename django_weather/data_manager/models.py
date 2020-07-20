@@ -6,10 +6,8 @@ from rest_framework.reverse import reverse as api_reverse
 # Location model
 
 class Location(models.Model):
-
     cUS = 'US'  # c = Country, so cUS = Country USA
     cCA = 'CA'
-
     COUNTRY_LIST = [
         (cUS, 'United States'),
         (cCA, 'Canada'),
@@ -23,7 +21,6 @@ class Location(models.Model):
 
     sTX = 'US'
     sCA = 'CA'  # s = State, so sCA = State California
-
     STATE_LIST = [
         (sTX, 'Texas'),
         (sCA, 'California'),
@@ -36,14 +33,14 @@ class Location(models.Model):
     )
 
     city = models.CharField(max_length=20)
-    longitude = models.FloatField(max_length=20)
+    longitude = models.FloatField(max_length=20)  # We will want to handle uniqueness here...  unique=True or unique_for_date = True maybe
     latitude = models.FloatField(max_length=20)
 
-    def __str__(self):
+    def __str__(self):  # This is the "name" of the model
         return self.city  # Maybe should do something else here...  Multiple lat+long per city
 
-    def get_api_url(self, request=None):
-        return api_reverse("api:location-rud", kwargs={'pk': self.pk}, request=request)
+    def get_api_url(self, request=None):  # get_api_url() is used by our HyperlinkedModelSerializer in api/serializers.py
+        return api_reverse("api:location-rud", kwargs={'pk': self.pk}, request=request)  # location-rud is the friendly name of our RUD/detail view URL.
 
 # Daily Temp Model
 

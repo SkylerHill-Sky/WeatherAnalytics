@@ -4,7 +4,7 @@ from .serializers import LocationSerializer
 from django.views.decorators.csrf import csrf_exempt
 
 class LocationCreateView(generics.ListCreateAPIView):
-    lookup_field = 'pk' # url('# ?P<pk>\d+')
+    lookup_field = 'pk'  # url('# ?P<pk>\d+')
     serializer_class = LocationSerializer
 
     def get_queryset(self):
@@ -17,8 +17,8 @@ class LocationCreateView(generics.ListCreateAPIView):
     def get_serializer_context(self, *args, **kwargs):
         return {"request": self.request}
 
-class LocationRUDView(generics.RetrieveUpdateDestroyAPIView): # DetailView
-    lookup_field = 'pk' # url('# ?P<pk>\d+')
+class LocationRUDView(generics.RetrieveUpdateDestroyAPIView):  # DetailView
+    lookup_field = 'pk'  # url('# ?P<pk>\d+')
     serializer_class = LocationSerializer
 
     def get_queryset(self):

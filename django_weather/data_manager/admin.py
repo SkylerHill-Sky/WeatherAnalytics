@@ -1,7 +1,11 @@
 from django.contrib import admin
-from .models import Person
+from .models import Location, DailyTemp
 
 # Register your models here.
-@admin.register(Person)
-class PersonAdmin(admin.ModelAdmin):
+@admin.register(Location)
+class LocationAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(DailyTemp)
+class DailyTempAdmin(admin.ModelAdmin):
     pass
